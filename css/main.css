@@ -1,0 +1,3627 @@
+@font-face {
+    font-family: Segoe UI;
+    src: url('../fonts/segoeui.ttf');
+}
+
+@font-face {
+    font-family: Segoe UI;
+    font-weight: bold;
+    src: url('../fonts/segoeui.ttf');
+}
+
+/* Code hieronder zorgt ervoor dat de margins van alle elementen worden gereset naar 0 dit heb ik gedaan om van de witruimte boven de header af te komen. */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #003082;
+    font-family: Segoe UI;
+    background-color: #e6e6e9;
+}
+
+
+/* !BEGIN HEADER/NAVIGATIE! */
+
+/* !DE HEADER NIET UITGEKLAPT! */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    height: 4em;
+}
+
+
+/* ONDERKANT HEADER */
+
+header + svg {
+    width: 100%;
+    border-top: solid 0.5em white;
+    margin-top: -0, 2em;
+}
+
+/* ONDERKANT HEADER */
+
+/* NS LOGO SMARTPHONE */
+
+a svg {
+    width: 4.5em;
+    margin: 1.4em 0 2em 1.6em;
+    display: block;
+}
+
+/* NS LOGO SMARTPHONE */
+
+/* MENU UITKLAP ICON*/
+
+.menuuitklap {
+    align-self: center;
+    color: #003082;
+    z-index: 1001;
+    padding-right: 1.6em;
+    width: 8.5em;
+    text-align: right;
+}
+
+/* EINDE MENU UITKLAP ICON*/
+
+/* !EINDE HEADER NIET UITGEKLAPT! */
+
+/* !BEGIN UITKLAPMENU! */
+
+/* MENU INKLAP TRIGGER MET LOGO*/
+
+.menuinklap {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    height: 4em;
+    margin: -0.1em 1.6em 0 2.2em;
+    text-align: center;
+    color: #003082;
+}
+
+/* MENU INKLAP TRIGGER MET LOGO*/
+
+/* ICON MENUINKLAP*/
+
+label i {
+    margin-top: 0.3em;
+}
+
+/* ICON MENUINKLAP*/
+
+/* NS LOGO UITGEKLAPT MENU*/
+
+.menuinklap svg {
+    width: 4.5em;
+    padding-top: 1em;
+    margin-left: -0.6em;
+}
+
+/* NS LOGO UITGEKLAPT MENU*/
+
+/* TRANSPARANT VLAK WANNEER HEADER UITGEKLAPT IS */
+
+.transvlak {
+    background-color: rgba(0, 48, 130, .8);
+    position: fixed;
+    color: antiquewhite;
+    z-index: 1000;
+    display: none;
+    height: 450px;
+    width: 100%;
+    margin-top: 17.75em;
+    height: 100%;
+}
+
+/* TRANSPARANT VLAK WANNEER HEADER UITGEKLAPT IS */
+
+/* ONDERKANT UITGEKLAPTE HEADER */
+
+.transvlak svg {
+    width: 100%;
+    fill: red;
+    border-top: solid 0.5em white;
+}
+
+/* ONDERKANT UITGEKLAPTE HEADER */
+
+/* NAVIGATIE */
+
+nav {
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 1002;
+    display: none;
+}
+
+
+nav a {
+    color: #003082;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    background-color: white;
+    padding: 1.15em;
+}
+
+ul a {
+    border-top: solid 0.3em;
+    border-bottom-style: ridge 0.5px;
+    border-color: #ffc917;
+}
+
+/* !EINDE UITKLAPMENU! */
+
+/* DE TRIGGERS VOOR HET UITKLAP MENU */
+
+#toggle-menu {
+    display: none;
+}
+
+#toggle-menu:checked ~ nav {
+    display: block;
+}
+
+#toggle-menu:checked ~ .transvlak {
+    display: block;
+}
+
+/* EINDE TRIGGERS VOOR HET UITKLAP MENU */
+
+/* NS LOGO TABLET/DESKTOP*/
+
+.tabdesk > svg {
+    width: 4em;
+    display: none;
+}
+
+/* NS LOGO TABLET/DESKTOP*/
+
+/* !EINDE HEADER/NAVIGATIE! */
+
+/* BEGIN CAROUSEL UITGELICHTE VERHALEN */
+
+::-webkit-scrollbar {
+    background-color: #f4f4f4;
+    width: 0.4em;
+}
+
+::-webkit-scrollbar-thumb {
+    background: url(../img/scrollbar.svg) no-repeat;
+}
+
+::-webkit-scrollbar:horizontal {
+    background-color: #f4f4f4;
+    border-bottom: #e6e6e9;
+    height: 1.2em;
+
+}
+
+::-webkit-scrollbar-track:horizontal {
+    background-position: 5em 6em;
+    background: #e6e6e9;
+    border-bottom: 3px solid #e6e6e9;
+
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background: #e6e6e9;
+
+
+}
+
+.carousel {
+    margin: 0em 1.7em 0em 1.7em;
+    position: relative;
+}
+
+
+.carouselafsnee {
+    max-width: 100%;
+    overflow: hidden;
+    overflow: auto;
+    height: 20em;
+}
+
+
+.content {
+    width: 280em;
+    list-style-type: none;
+    padding: 2em 0 0em 0;
+    position: relative;
+}
+
+
+.card {
+    width: 20em;
+    height: 15em;
+    background: #fff;
+    float: left;
+    margin: 0 1em 0 0;
+    cursor: pointer;
+    transform: scale(1);
+    visibility: visible;
+    box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+    transition: all .2s ease-in-out;
+    background: url(../img/vergezochtthumb.svg) no-repeat;
+}
+
+li article {
+    background: url(../img/uitgelichtheader.svg) no-repeat;
+}
+
+
+.card h1 {
+    color: white;
+    text-align: center;
+    padding-top: 0.3em;
+}
+
+
+.card h2 {
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1);
+    visibility: visible;
+    transition: all .2s ease-in-out;
+    transform: scale(1.1);
+    z-index: 100;
+    position: relative;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+    transition-duration: 400ms;
+
+}
+
+
+
+.carouselafsnee {
+    overflow: auto;
+    zoom: 1;
+}
+
+
+/* EINDE CAROUSEL UITGELICHTE VERHALEN */
+
+/*BEGIN VAN FILTER GEDEELTE*/
+
+/*SEARCHBAR */
+
+.filterkop {
+    font-size: 1.3em;
+    margin-top: 2em;
+}
+
+
+
+.searchbarcontainer {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.knopmetbalk {
+    display: flex;
+    justify-content: flex-end;
+    height: 2.5em;
+    margin-top: 1.5em;
+    padding: 0em;
+    margin-bottom: 1em;
+}
+
+.search-input {
+    outline: none;
+    width: 9.5em;
+    display: inline-block;
+    border: 0.15em solid white;
+    font-size: 0.85em;
+    padding-left: 1em;
+    box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+    visibility: hidden;
+    transform: scaleX(0);
+    transform-origin: 100%;
+    transition-timing-function: ease-in;
+    transition: transform 0.4s, visibility 0.4s;
+
+}
+
+.search-button {
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s linear;
+    background-color: #12947d;
+    background: url(../img/booksearchicon.svg) no-repeat center;
+    margin: 0;
+    border: none;
+    background-color: #ffc917;
+    background-size: 50%;
+    cursor: pointer;
+    box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+    font-size: 0.6em;
+    width: 5em;
+}
+
+/*SEARCHBAR */
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.6em 0 1.6em;
+}
+
+
+
+.filtermenu {
+    margin-top: 0.5em;
+    background-color: white;
+    box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+}
+
+
+
+button {
+    display: inline-block;
+    border: none;
+    font-size: 1.1em;
+    padding: 0.4em 0.6em 0.4em 0.6em;
+    cursor: pointer;
+    color: white;
+    background-color: #ffc917;
+    outline: none;
+}
+
+.sorteren:hover {
+    background: #ffe299;
+}
+
+.sorteren:active {
+    background: #ffe299;
+}
+
+
+.sorteren:focus {
+    background: #ffe299;
+}
+
+
+/* custom dropdown select menu */
+
+.customdropdown {
+    width: 10em;
+    background-position: 8em 0.5em;
+    color: #0079d3;
+    margin: auto;
+    font-size: 1em;
+    margin-top: 1.2em;
+
+}
+
+.filtersverwijderen {
+    float: right;
+    margin: 0;
+    margin-top: 1em;
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+h1 {
+    font-size: 2em;
+}
+
+.websitetitel {
+    text-align: center;
+    font-size: 3em;
+    font-family: Segoe UI;
+    margin-top: 0.3em;
+    margin: 0.3em 0.3em 0em 0.3em;
+    line-height: 1.15em;
+}
+
+
+
+.filterknoppen {
+    display: flex;
+    justify-content: center;
+    background-color: #ffc917;
+    outline: none;
+}
+
+
+
+/* einde custom dropdown select menu */
+
+/*EINDE VAN FILTER GEDEELTE*/
+
+/*BEGIN VAN VERHALEN COLLECTIE*/
+
+section.verhalenwrap {
+    margin-top: -0.9em;
+    margin-bottom: 3em;
+}
+
+
+.verhalencol {
+    display: grid;
+    grid-gap: 1.3em;
+    grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+    grid-template-rows: repeat(2, 17em);
+    margin: 2.2em 1.6em 0em 1.6em;
+}
+
+.kaas {
+    position: absolute;
+    background: url(../img/kud4.jpg);
+}
+
+
+.afscherming2 {
+    display: none;
+    background-color: greenyellow;
+}
+
+
+.afscherming3 {
+    display: none;
+    background-color: pink;
+}
+
+.verhalencol article {
+    background: url(../img/verhalencollectieo.svg), url(../img/sheenthumb.svg) center;
+    background-position: ;
+    box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+    border-bottom: 5px solid #ffc917;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0em 13em, bottom;
+    transition: 0.5s ease;
+    background-size:105%, 125%;
+}
+
+
+.verhalencol article:hover {
+    background: url(../img/verhalencollectieo.svg), url(../img/sheenthumb.svg) center;
+    background-position: ;
+    box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+    border-bottom: 5px solid #ffc917;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0em 13em, bottom;
+    transform: scale(1.03);
+    cursor: pointer;
+    background-size:105%, 125%;
+}
+
+/* VOOR VERHAAL 2 */
+
+.verhalencol article.verhaal2 {
+    background: url(../img/verhalencollectieo.svg), url(../img/paranoiathumb.svg) center;
+    background-position: ;
+    box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+    border-bottom: 5px solid #ffc917;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0em 13em, bottom;
+    transition: 0.5s ease;
+    background-size:105%, 125%;
+}
+
+
+.verhalencol article.verhaal2:hover {
+    background: url(../img/verhalencollectieo.svg), url(../img/paranoiathumb.svg) center;
+    background-position: ;
+    box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+    border-bottom: 5px solid #ffc917;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0em 13em, bottom;
+    transform: scale(1.03);
+    cursor: pointer;
+    background-size:105%, 125%;
+}
+
+/* VOOR VERHAAL 2 */
+
+/* VOOR VERHAAL 3 */
+
+.verhalencol article.afscherming2 {
+    background: url(../img/verhalencollectieo.svg), url(../img/vergezochtthumb.svg) center;
+    background-position: ;
+    box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+    border-bottom: 5px solid #ffc917;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0em 13em, bottom;
+    transition: 0.5s ease;
+    background-size:105%, 125%;
+}
+
+
+.verhalencol article.afscherming2:hover {
+    background: url(../img/verhalencollectieo.svg), url(../img/vergezochtthumb.svg) center;
+    background-position: ;
+    box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+    border-bottom: 5px solid #ffc917;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0em 13em, bottom;
+    transform: scale(1.03);
+    cursor: pointer;
+    background-size:105%, 125%;
+}
+
+/* VOOR VERHAAL 3 */
+
+
+
+
+.verhalencolheader {
+    background: url(../img/verhalencollectieb.svg) no-repeat;
+    background-position: 0em -0.6em;
+    height: 5.8em;
+    width: 100%;
+    border-top: 13px solid #ffc917;
+
+}
+
+h3.verhaaltitel {
+    color: white;
+}
+
+header h3 {
+    font-size: 4.5vw;
+    margin: 5.5vw -2vw 0vw 5vw;
+}
+
+
+/* DE VERHALEN TOEVOEG KNOP */
+
+.animateable {
+    transition: all 1.5s ease-out;
+}
+
+.out {
+    opacity: 0;
+    transform: translateX(-300px);
+}
+
+
+.in {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+#classToggleButton {
+    color: white;
+    background-color: black;
+    margin-right: 0.8em;
+    box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+    background-color: #0079d3;
+    float: right;
+    /*margin: 4.5em 0em 0em 8em;*/
+    outline: none;
+    margin-top: 5em;
+}
+
+
+
+#classToggleButton:hover {
+    color: white;
+    background-color: #34a0e2;
+    margin-right: 0.8em;
+    box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+
+}
+
+#classToggleButton:active {
+    color: white;
+    background-color: #0079d3;
+    margin-right: 0.8em;
+    box-shadow: none;
+    margin-top: 5.2em;
+
+
+}
+
+
+
+.interactiewrap {
+    width: 6.5em;
+    overflow: hidden;
+    margin-top: 4.7em;
+    height: 2.5em;
+}
+
+#content {
+    float: right;
+}
+
+
+
+.toegevoegd {
+    color: red;
+}
+
+
+
+/* DE VERHALEN TOEVOEG KNOP */
+
+/*EINDE VAN VERHALEN COLLECTIE*/
+
+/* !BEGIN LOGIN/REGISTREREN! */
+
+form {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 18em;
+    color: #003082;
+    margin-bottom: 3.5em;
+    box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+}
+
+/* REGISTREER/LOGIN MENU */
+
+.accountmenu {
+    width: 15em;
+    display: flex;
+    margin: auto;
+    margin-top: 2em;
+    font-size: 1.2em;
+    justify-content: space-between;
+
+}
+
+.accountmenu li {
+    text-decoration: none;
+    list-style: none;
+    display: inline-block;
+}
+
+.registreerknop {
+    background-color: #ffc917;
+    padding: 0.3em 1.85em 0.5em 1.3em;
+    transition: 0.5s ease;
+}
+
+.registreerknop a {
+    border: none;
+    text-decoration: none;
+    color: white;
+}
+
+
+.registreerknop:hover {
+    background: #ffe299;
+}
+
+.registreerknopactief {
+    background-color: white;
+    padding: 0.3em 1.85em 0.5em 1.3em;
+    transition: 0.5s ease;
+}
+
+.registreerknopactief a {
+    border: none;
+    text-decoration: none;
+    color: #ffc917;
+}
+
+
+
+.loginknop {
+    background: linear-gradient(90deg, #ffb519, #ffc917);
+    padding: 0.3em 3.1em 0.5em 1.85em;
+    transition: 0.5s ease;
+}
+
+.loginknop a {
+    border: none;
+    text-decoration: none;
+    color: white;
+}
+
+.loginknop:hover {
+    background: #ffe299;
+}
+
+.loginknopactief {
+    background: white;
+    padding: 0.3em 3.1em 0.5em 1.85em;
+    transition: 0.5s ease;
+}
+
+.loginknopactief a {
+    border: none;
+    text-decoration: none;
+    color: #ffc917;
+}
+
+fieldset .wwlinkje {
+    color: #ffc917;
+    margin: 0.2em 0em 1.5em 0;
+    display: block;
+    cursor: pointer;
+    font-size: 0.84em;
+    text-decoration: none;
+}
+
+
+/* EINDE REGISTREER/LOGIN MENU */
+
+fieldset {
+    border: none;
+    margin: 0em 2em 0em 2em;
+}
+
+legend {
+    font-size: 1em;
+    color: #0079d3;
+    padding-top: 1.2em;
+    padding-bottom: 1em;
+
+}
+
+/* Radio knoppen met label */
+
+/* hierdoor verdwijnt de radio button maar niet de functie er van */
+
+fieldset p {
+    color: #0079d3;
+    margin-bottom: 0.6em;
+}
+
+
+
+input[type="radio"] {
+    opacity: 0;
+    width: 0;
+    margin: 0;
+}
+
+
+
+label[for="male"],
+label[for="female"] {
+    background: url(../img/checkradio.svg) no-repeat;
+    background-size: 1.5em;
+    line-height: 1.5em;
+    cursor: pointer;
+    padding: 0.05em 0em 0.05em 1.5em;
+    margin-left: -0.3em;
+}
+
+
+
+label[for="female"] {
+    margin-left: 1em;
+}
+
+input:checked + label[for="male"],
+input:checked + label[for="female"] {
+    background-position: 0 -1.9em;
+    color: #ffc917;
+}
+
+/* Einde radio knoppen met label */
+
+/* Checkbox met label */
+
+input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    margin: 0;
+}
+
+label[for="nieuwsbrief"] {
+    display: inline-block;
+    background: url(../img/checkradio.svg) no-repeat;
+    background-size: 2em;
+    background-position: 0 -5em;
+    line-height: 24px;
+    cursor: pointer;
+    font-size: 0.84em;
+    padding-left: 2.2em;
+    color: #0079d3;
+    margin: 0em 0em 1.5em -0.3em;
+}
+
+input:checked + label[for="nieuwsbrief"] {
+    background-position: 0 -7.6em;
+    color: #ffc917;
+}
+
+/* Einde checkbox met label */
+
+/* Textvelden met icon */
+
+input[type="email"],
+input[type="password"],
+input[type="username"] {
+    display: flex;
+    margin-top: 0.4em;
+    padding: 0.7em 0.17em 0.7em 2.9em;
+    border: 0.15em solid #003082;
+    background: url(../img/inputafbeeldingen.svg) no-repeat;
+    background-size: 1.8em;
+    background-color: white;
+    color: #003082;
+    font-size: 1em;
+    outline: none;
+}
+
+input[type="email"] {
+    background-position: 0.6em 0.5em;
+}
+
+input[type="password"] {
+    background-position: 0.6em -4.3em;
+}
+
+input[type="username"] {
+    background-position: 0.6em -9.4em;
+}
+
+/* De placeholders */
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #c9c9c9;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #c9c9c9;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #c9c9c9;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #c9c9c9;
+}
+
+/* De placeholders */
+
+/* Einde textvelden met icon */
+
+/* De selectbox */
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+    display: flex;
+    margin: 1.5em 0em 1em 0em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    background: url(../img/selectpijl.svg) no-repeat;
+    background-size: 1em;
+    background-color: white;
+    color: #003082;
+    border: 0.15em solid #003082;
+    border-radius: 0;
+    font-size: 0.85em;
+    width: 100%;
+    background-position: 14.5em;
+    cursor: pointer;
+    outline: none;
+
+}
+
+
+/* Einde selectbox */
+
+/* Registreer knop */
+
+input[type="submit"] {
+    padding: 0.3em 0em 0.5em 0em;
+    color: white;
+    box-shadow: inset 0 -0.2rem 0 #cfa317;
+    width: 100%;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    border: none;
+    background: linear-gradient(90deg, #ffb519, #ffc917);
+    cursor: pointer;
+    margin-bottom: 1.5em;
+    outline: none;
+}
+
+input[type="submit"]:hover {
+
+    background: #ffe299;
+    cursor: pointer;
+}
+
+input[type="submit"]:active {
+    box-shadow: none;
+    background: linear-gradient(90deg, #ffb519, #ffc917);
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/* Einde Registreer knop */
+
+/* Input validatie stijlen */
+
+input[type="email"]:valid,
+input[type="password"]:valid,
+input[type="username"]:valid {
+    border: 0.15em solid #ffc917;
+}
+
+
+input[type="email"]:valid {
+    background-position: 0.6em -1.85em;
+}
+
+
+input[type="password"]:valid {
+    background-position: 0.6em -6.86em;
+}
+
+input[type="username"]:valid {
+    background-position: 0.6em -12em;
+}
+
+
+input[type="email"]:valid + .tick,
+input[type="password"]:valid + .tick,
+input[type="username"]:valid + .tick {
+    background: url(../img/validatiebalk.svg) no-repeat;
+    background-size: 100%;
+    display: block;
+    height: 1.5em;
+}
+
+
+.tick {
+    text-align: right;
+    color: white;
+    padding: 0em 1.3em 0em 0em;
+    font-size: 0.9em;
+}
+
+/* !EINDE LOGIN/REGISTREREN! */
+
+/* PAGINATION */
+
+a:hover {
+    cursor: pointer;
+
+}
+
+#pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: -0.5em 0em 2.5em 0em;
+}
+
+ul.pagination {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+ul.pagination li {
+    color: #fff;
+    display: flex;
+}
+
+ul.pagination li a {
+    background-color: #ffc917;
+    padding: 0.4em 0.7em;
+    border: 0.2em solid #e6e6e9;
+    border-right: 0.2em solid #e6e6e9;
+    color: white;
+}
+
+ul.pagination li.active a {
+    background-color: #ffe299;
+
+}
+
+ul.pagination li:first-child a {}
+
+ul.pagination li:last-child a {}
+
+
+/* PAGINATION */
+
+/* !BEGIN FOOTER! */
+
+footer {
+    height: 15em;
+    background-color: white;
+
+    margin-top: 0em;
+}
+
+
+/* SOCIALS IN FOOTER */
+
+._14 {
+    font-size: 1.5em;
+}
+
+.footer-social-icons {
+    width: 12em;
+    display: block;
+    margin-left: 2.3em;
+    padding-top: 1.5em;
+
+}
+
+.social-icon {
+    color: #fff;
+}
+
+ul.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons li {
+    vertical-align: top;
+    display: inline;
+    height: 100px;
+}
+
+.social-icons a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 0.3em;
+
+}
+
+.fa-facebook {
+    padding: 10px 14px;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    background-color: #003082;
+    box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+}
+
+.fa-facebook:hover {
+    background-color: #3d5b99;
+}
+
+.fa-facebook:active {
+    background-color: #003082;
+}
+
+.fa-twitter {
+    padding: 10px 12px;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    background-color: #003082;
+    box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+}
+
+.fa-twitter:hover {
+    background-color: #00aced;
+}
+
+
+.fa-twitter:active {
+    background-color: #003082;
+}
+
+
+
+.fa-youtube {
+    padding: 10px 14px;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    background-color: #003082;
+    box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+}
+
+.fa-youtube:hover {
+    background-color: #e64a41;
+}
+
+.fa-youtube:active {
+    background-color: #003082;
+}
+
+.fa-linkedin {
+    padding: 10px 14px;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    background-color: #003082;
+    box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+}
+
+.fa-linkedin:hover {
+    background-color: #0073a4;
+}
+
+
+.fa-linkedin:active {
+    background-color: #003082;
+}
+
+
+
+
+
+
+/* SOCIALS IN FOOTER */
+
+/* LOGO IN FOOTER */
+
+footer img {
+    margin-left: 2.3em;
+    margin-top: 2.5em;
+}
+
+
+/* LOGO IN FOOTER */
+
+/* !EINDE FOOTER! */
+
+/* VERGEZOCHT VERHAAL */
+
+main.vergezocht {
+    background-color: #30303A;
+    padding-bottom: 3em;
+}
+
+.chartBarsWrap {
+    margin: -4.5em 1.5em -2.2em 1.5em;
+    background-color: ;
+}
+
+.chartBars {
+    position: relative;
+    max-width: 600px;
+    height: 300px;
+    margin: 50px auto 100px;
+}
+
+.chartBars .bars {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    padding: 0 1%;
+    margin: 0;
+}
+
+.chartBars .bars li {
+    display: inline-block;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 24%;
+    flex: 0 1 24%;
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    position: relative;
+    font-size: 16px;
+}
+
+.chartBars .bars li .bar {
+    width: 100%;
+    background: #49E;
+    position: absolute;
+    font-size: 1.5em;
+    color: transparent;
+    padding-top: 18px;
+    bottom: 0;
+    height: 0;
+    overflow: hidden;
+    font-weight: bold;
+    outline: 2px solid transparent;
+    -webkit-transition: 1.5s height cubic-bezier(0.6, 0.4, 0.4, 1.1);
+    transition: 4s height cubic-bezier(0.6, 0.4, 0.4, 1.1);
+}
+
+.chartBars .bars li .bar:after {
+    content: '';
+    vertical-align: top;
+    color: transparent;
+    margin-right: -8px;
+}
+
+.chartBars .bars li b {
+    color: #eee;
+    width: 100%;
+    position: absolute;
+    bottom: -2em;
+    left: 0;
+    text-align: center;
+    border-radius: none;
+}
+
+.chartBars .numbers {
+    width: 50px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position: absolute;
+    left: -50px;
+}
+
+.chartBars .numbers li {
+    text-align: right;
+    padding-right: 1em;
+    list-style: none;
+    height: 59px;
+    position: relative;
+    font-size: 0.5em;
+    bottom: 11px;
+    right: -9px;
+    color: #eee;
+}
+
+.chartBars .numbers li:after {
+    content: "\00af";
+    position: relative;
+    right: -5px;
+    font-size: 5px;
+    top: 7px;
+    color: rgba(255, 255, 255, 0.34);
+}
+
+.chartBars .numbers li:first-of-type {
+    height: 63px;
+    margin-top: -1px;
+}
+
+.chartBars1 .bar {
+    border-top-right-radius: 30px;
+}
+
+.chartBars2 {
+    max-width: 700px;
+}
+
+.chartBars2 .bars {
+    padding: 0;
+
+}
+
+.chartBars2 .bars li {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 25%;
+    flex: 0 1 25%;
+}
+
+.chartBars2 .bars li .bar {
+    -webkit-box-shadow: 0 0 20px #222;
+    box-shadow: 0 0 20px #222;
+}
+
+.chartBars3 {
+    background: rgba(255, 255, 255, 0.1);
+    border-top: 1px solid #666;
+    border-right: 1px solid #666;
+}
+
+.chartBars3 .bars {
+    border-color: #666;
+    padding: 0;
+}
+
+.chartBars3 .bars li .bar {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    font-size: 22px !important;
+}
+
+.chartBars3 .bars li .bar:after {
+    font-size: .6em !important;
+}
+
+.chartBarsWrap.chartBarsHorizontal {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 70px;
+}
+
+.chartBarsWrap.chartBarsHorizontal .bars b {
+    color: #eee;
+    width: 100%;
+    position: absolute;
+    bottom: initial;
+    top: 1em;
+    left: -102%;
+    text-align: right;
+}
+
+.chartBarsWrap.chartBarsHorizontal .chartBars {
+    height: 500px;
+}
+
+.chartBarsWrap.chartBarsHorizontal .chartBars .bars {
+    border: 0;
+}
+
+.chartBarsWrap.chartBarsHorizontal .chartBars .bars .bar {
+    width: 0;
+    padding-top: 10px;
+    height: 100% !important;
+    text-align: right;
+    font-size: 1.5em;
+
+    -webkit-transition: 2s width cubic-bezier(0.6, 0.4, 0.4, 1.1);
+    transition: 2s width cubic-bezier(0.6, 0.4, 0.4, 1.1);
+}
+
+.chartBarsWrap.chartBarsHorizontal .chartBars .bars .bar:after {
+    font-size: .6em !important;
+    margin-right: 20px;
+}
+
+.bars li .bar.greenBarFlat {
+    background-color: #6B8E23, #6B8E23;
+    background: url(img/kaas.svg);
+    background-position: right;
+}
+
+.bars li .bar.blueBarFlat {
+    background-color: #49E;
+}
+
+.bars li .bar.orangeBarFlat {
+    background-color: orange;
+}
+
+.bars li .bar.purpleBarFlat {
+    background-color: #6e46af;
+}
+
+
+
+
+
+/* DE VERSCHILLENDE BARS VAN DE EERSTE GRAFIEK */
+
+.bars li .bar.vBar {
+    background: url(../img/v.svg) no-repeat bottom;
+    box-shadow: none;
+    background-size: 92%;
+}
+
+
+.bars li .bar.eBar {
+    background: url(../img/e.svg) no-repeat bottom;
+    box-shadow: none;
+    background-size: 92%;
+}
+
+.bars li .bar.rBar {
+    background: url(../img/r.svg) no-repeat bottom;
+    box-shadow: none;
+    background-size: 92%;
+}
+
+.bars li .bar.gBar {
+    background: url(../img/g.svg) no-repeat bottom;
+    box-shadow: none;
+    background-size: 92%;
+}
+
+.bars li .bar.e2Bar {
+    background: url(../img/e2.svg) no-repeat bottom;
+    box-shadow: none;
+    background-size: 92%;
+}
+
+.bars li .bar.zBar {
+    background: url(../img/z.svg) no-repeat bottom;
+    box-shadow: none;
+    background-size: 92%;
+}
+
+.bars li .bar.oBar {
+    background: url(../img/o.svg) no-repeat bottom;
+    box-shadow: none;
+    background-size: 92%;
+}
+
+.bars li .bar.cBar {
+    background: url(../img/c.svg) no-repeat bottom;
+    box-shadow: none;
+    background-size: 92%;
+}
+
+.bars li .bar.hBar {
+    background: url(../img/h.svg) no-repeat bottom;
+    box-shadow: none;
+    background-size: 92%;
+}
+
+.bars li .bar.tBar {
+    background: url(../img/t.svg) no-repeat bottom;
+    box-shadow: none;
+    background-size: 92%;
+}
+
+
+/* DE VERSCHILLENDE BARS VAN DE EERSTE GRAFIEK */
+
+/* EERSTE ALINEA */
+
+section.wrappereerstealineas {
+    background-color: ;
+    margin-top: -4em;
+}
+
+
+article.eerstealineas {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+article.eerste {
+    margin: 0em 1.5em 0em 1.5em;
+    font-size: 1em;
+    line-height: 1.27em;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    padding-top: 0em;
+    color: white;
+}
+
+
+
+/* EERSTE ALINEA */
+
+/* TUSSEN GRAFIEKJES */
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20.55em;
+    margin: auto;
+    background-color: ;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+
+.bar {
+    margin-top: 0.2em;
+    background-color: #BF2804;
+    height: 0.3em;
+    margin-bottom: 1em;
+}
+
+.fill {
+    height: 100%;
+    width: 0;
+    transition: width 4s;
+}
+
+.fill.orange {
+    background-color: #FF3D05;
+}
+
+
+/* EINDE TUSSEN GRAFIEKJES */
+
+/* RONDE GRAFIEKJES */
+
+#pie_0 {
+    color: transparent;
+    background: url(../img/cirkel1.svg) no-repeat;
+}
+
+#pie_1 {
+    color: transparent;
+    background: url(../img/cirkel3.svg) no-repeat;
+}
+
+#pie_2 {
+    color: transparent;
+    background: url(../img/cirkel2.svg) no-repeat;
+}
+
+.box-piesite {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+.piesite {
+    position: relative;
+    width: 1em;
+    height: 1em;
+    font-size: 10em;
+    cursor: default;
+}
+
+.piesite .percent {
+    position: absolute;
+    top: 1.1em;
+    left: .1em;
+    width: 100%;
+    font-size: .3em;
+    text-align: center;
+    z-index: 2;
+}
+
+.piesite .percent .symbol {
+    font-size: .5em;
+    vertical-align: top;
+    opacity: .5;
+}
+
+.piesite > #slice {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    clip: rect(0px, 1em, 1em, 0.5em);
+}
+
+.piesite > #slice.gt50 {
+    clip: rect(auto, auto, auto, auto);
+}
+
+.piesite > #slice > .pie {
+    position: absolute;
+    border: .1em solid #444;
+    width: 1em;
+    height: 1em;
+    clip: rect(0em, 0.5em, 1em, 0em);
+    border-radius: 0.5em;
+}
+
+li.design .piesite > #slice > .pie {
+    border-color: #50ad26;
+}
+
+li.usability .piesite > #slice > .pie {
+    border-color: #1fa9be;
+}
+
+li.creativity .piesite > #slice > .pie {
+    border-color: #fe0c0b;
+}
+
+.piesite > #slice > .pie.fill {
+    -webkit-transform: rotate(180deg) !important;
+    transform: rotate(180deg) !important;
+}
+
+.piesite.fill > .percent {
+    display: none;
+}
+
+.piesite:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: .1em;
+    left: .1em;
+    width: .8em;
+    height: .8em;
+    border-radius: 100%;
+    z-index: 1;
+    color: transparent;
+}
+
+.piesite:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    border-radius: .5em;
+    opacity: .5;
+    z-index: 0;
+}
+
+.piesite:before {
+    /* background: rgba(255, 255, 255, 0.1); */
+}
+
+.box-piesite ul {
+    padding: 0;
+}
+
+.box-piesite ul li {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+/* EINDE RONDE GRAFIEKJES */
+
+.chartBarsHorizontal .chartBars .bars {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+
+
+.tooltip > .tooltipContent {
+    display: block;
+    position: absolute;
+    background: none repeat scroll 0 0 #222;
+    color: #F0B015;
+    font-family: 'Helvetica';
+    font-size: 0.8em;
+    font-weight: normal;
+    line-height: 1.5em;
+    padding: 16px 15px;
+    min-width: 200px;
+    max-width: 500px;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, -110%);
+    transform: translate(-50%, -110%);
+    margin-left: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    text-align: center;
+    z-index: 2;
+    text-transform: none;
+    -webkit-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.tooltip:hover > .tooltipContent {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 99;
+    -webkit-transform: translate(-50%, -130%);
+    transform: translate(-50%, -130%);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.tooltip .tooltipContent:after {
+    border-color: #222 rgba(0, 0, 0, 0);
+    border-style: solid;
+    border-width: 15px 15px 0;
+    bottom: -15px;
+    content: "";
+    display: block;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    position: absolute;
+    width: 0;
+}
+
+/* VERGEZOCHT VERHAAL */
+
+/* PARANOIA VERHAAL */
+
+.paranoia {
+    background: url(../img/halftone-yellow.png);
+
+}
+
+
+div.titelcontainer {
+    display: flex;
+    justify-content: center;
+    background-color: ;
+    height: 10em;
+    margin: 1em 1.6em 5em 3em;
+}
+
+
+img.titel {
+    width: 130em;
+    height: 20em;
+    padding-bottom: 1em;
+
+}
+
+
+footer.paranoiafooter {
+    margin-top: 77em;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.article {
+    display: block;
+    margin: 0 0 30px 0;
+    padding: 12px;
+    background: ;
+    border-radius: 3px;
+    transition: all 220ms;
+}
+
+.article:hover {
+    transform: scale(1.2, 1.2) translateY(-5px);
+    transition: all 220ms;
+}
+
+.article > img {
+    display: block;
+    width: 100%;
+    margin: 0 0 24px 0;
+}
+
+.article h2 {
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: -2em 0 0 0;
+    font-family: 'Gloria Hallelujah', cursive;
+    color: #FF0000;
+}
+
+h2.tekstomhoog {
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: -3em 0 12px 0;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+
+.wall {
+    font-family: sans-serif;
+    margin: 3em;
+    margin-top: 10em;
+    background: #f0f0f0;
+    color: #505050;
+    display: block;
+    position: relative;
+    background: url(../img/halftone-yellow.png);
+}
+
+
+.wall-column {
+    display: block;
+    position: relative;
+    width: 33.333333%;
+    float: left;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.wall-column:first-child {
+    padding-right: 0em;
+}
+
+
+.wall-column ~ .wall-column {
+    padding-left: 0em;
+    padding-right: 0em;
+}
+
+
+.wall-column:last-of-type {
+    padding-right: 0;
+}
+
+
+@media (max-width: 640px) {
+
+    .wall-column {
+        width: 50%;
+    }
+
+    div.titelcontainer {
+        display: flex;
+        justify-content: center;
+        background-color: ;
+        height: 5em;
+        margin: -1em 1.6em 3em 1.6em;
+    }
+
+    .wall {
+        font-family: sans-serif;
+        margin: 1.75em;
+        margin-top: 10em;
+        background: #f0f0f0;
+        color: #505050;
+        display: block;
+        position: relative;
+        background: url(../img/halftone-yellow.png);
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .wall-column {
+        width: auto;
+        float: none;
+        padding: 0;
+        margin-top: 10em;
+    }
+
+
+
+
+}
+
+/* PARANOIA VERHAAL */
+
+/* CHARLIE SHEEN VERHAAL */
+
+section.sheentekst {
+    display: flex;
+    justify-content: center;
+    background-color: ;
+    margin-bottom: 4em;
+}
+
+article.sheentekstkolommen {
+    display: flex;
+    flex-direction: column;
+    background-color: ;
+    margin: 0em 0.5em 0em 0.5em;
+}
+
+
+p.sheentekstkolom {
+    padding: 1em;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+p.speciaal {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body.charliesheen {
+    margin: 0;
+    background: #FF0000;
+}
+
+
+main.charliemain {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+
+}
+
+
+.world {
+    -webkit-perspective: 800px;
+    perspective: 800px;
+    width: 50em;
+    height: 50em;
+    background-color: #FF0000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+}
+
+
+
+.cube {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    width: 50vh;
+    height: 50vh;
+    position: relative;
+    -webkit-animation: rotator 4.5s linear infinite;
+    animation: rotator 10s linear infinite;
+    outline: 0;
+}
+
+
+
+
+
+
+
+.cube .cube__front {
+    color: #FF0000;
+    -webkit-transform: translateZ(25vh);
+    transform: translateZ(25vh);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/chlie.svg) no-repeat;
+    background-color: white;
+    background-size: 90%;
+    background-position: center;
+}
+
+
+.cube .cube__right {
+    color: #FF0000;
+    -webkit-transform: rotateY(90deg) translateZ(25vh);
+    transform: rotateY(90deg) translateZ(25vh);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/ar.svg) no-repeat;
+    background-color: white;
+    background-size: 90%;
+    background-position: center;
+
+}
+
+
+.cube .cube__left {
+    color: #FF0000;
+    -webkit-transform: rotateY(270deg) translateZ(25vh);
+    transform: rotateY(270deg) translateZ(25vh);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/ar.svg) no-repeat;
+    background-color: white;
+    background-size: 90%;
+    background-position: center;
+
+}
+
+
+.cube .cube__back {
+    color: #FF0000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: rotateY(180deg) translateZ(25vh);
+    transform: rotateY(180deg) translateZ(25vh);
+    background: url(../img/ar.svg) no-repeat;
+    background-color: white;
+    background-size: 90%;
+    background-position: center;
+
+}
+
+/* DIT IS DE sheen */
+
+.cube .cube__top {
+    color: #FF0000;
+    -webkit-transform: rotateX(90deg) translateZ(25vh);
+    transform: rotateX(90deg) translateZ(25vh);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/sheen.svg) no-repeat;
+    background-color: white;
+    background-size: 90%;
+    background-position: center;
+
+}
+
+/* DIT IS DE sheen */
+
+/* DIT IS DE AR */
+
+.cube .cube__bottom {
+    color: #FF0000;
+    -webkit-transform: rotateX(270deg) translateZ(25vh);
+    transform: rotateX(270deg) translateZ(25vh);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/ar.svg) no-repeat;
+    background-color: white;
+    background-size: 90%;
+    background-position: center;
+}
+
+/* DIT IS DE AR */
+
+@-webkit-keyframes rotator {
+    0% {
+        -webkit-transform: rotateX(0deg) rotateY(0deg);
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+        -webkit-transform: rotateX(360deg) rotateY(360deg);
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+@keyframes rotator {
+    0% {
+        -webkit-transform: rotateX(0deg) rotateY(0deg);
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+        -webkit-transform: rotateX(360deg) rotateY(360deg);
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CHARLIE SHEEN VERHAAL */
+
+/* TABLET BRAKEPOINT */
+
+@media (min-width: 30em) {
+
+
+    header {
+        background: pink;
+    }
+
+    /* !BEGIN HEADER/NAVIGATIE! */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        background: white;
+        position: relative;
+    }
+
+
+    /* NS LOGO TABLET/DESKTOP */
+    .tabdesk svg {
+        width: 4.5em;
+        margin: 0.8em 0 0.9em 1em;
+        display: block;
+    }
+    /* NS LOGO TABLET/DESKTOP */
+    /* BEGIN NAVIGATIE */
+    nav ul {
+        display: flex;
+        list-style: none;
+        background-color: white;
+        margin: 0.8em 1em 0.3em 0;
+    }
+
+
+    nav a {
+        padding: 0.6em 1.2em 0.2em 1.2em;
+        display: block;
+        text-decoration: none;
+        border-top: none;
+        color: #003082;
+        position: relative;
+        text-decoration: none;
+    }
+
+    /* DE HUIDIGE PAGINA AANDUIDING */
+    .active {
+        color: #ffc917;
+    }
+    /* DE HUIDIGE PAGINA AANDUIDING */
+    /* POINTER ACTIVATIE */
+    a:hover,
+    a:active,
+    a:focus,
+    a:visited {
+        cursor: pointer;
+        text-decoration: none;
+    }
+    /* POINTER ACTIVATIE */
+    /* DE GEKLEURDE TEKST DIE INSCHUIFT */
+    nav a:before {
+        content: attr(data-hover);
+        position: absolute;
+        margin: 0 1.2em 0 0;
+        padding: 0 0 0 1.2em;
+        color: #ffc917;
+        transition: all .7s ease;
+        max-width: 0;
+        overflow: hidden;
+        left: 0;
+        right: 0;
+    }
+    /* DE GEKLEURDE TEKST DIE INSCHUIFT*/
+    /* DE TRIGGER VAN HET HOVER EFFECT*/
+    nav a:hover:before {
+        max-width: 100%;
+    }
+    /* DE TRIGGER VAN HET HOVER EFFECT*/
+    /* EINDE NAVIGATIE */
+    /* !EINDE HEADER/NAVIGATIE! */
+    /* ONDERDELEN SMARTPHONE HEADER */
+    .menuuitklap {
+        display: none;
+    }
+
+    .transvlak {
+        display: none;
+    }
+
+    .menuinklap {
+        display: none;
+        position: relative;
+        margin: 1.45em 0 0 21.45em;
+    }
+
+    a svg {
+        width: 4em;
+        margin: 1.218em 0 2em 2em;
+        display: none;
+    }
+    /* ONDERDELEN SMARTPHONE HEADER */
+    /* BEGIN CAROUSEL UITGELICHTE VERHALEN */
+    ::-webkit-scrollbar {
+        background-color: #f4f4f4;
+        width: 0.4em;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: url(../img/scrollbar.svg) no-repeat;
+    }
+
+    ::-webkit-scrollbar:horizontal {
+        background-color: #f4f4f4;
+        border-bottom: #e6e6e9;
+        height: 1.2em;
+
+    }
+
+    ::-webkit-scrollbar-track:horizontal {
+        background-position: 5em 6em;
+        background: #e6e6e9;
+        border-bottom: 3px solid #e6e6e9;
+
+    }
+
+    ::-webkit-scrollbar-thumb:horizontal {
+        background: #e6e6e9;
+
+
+    }
+
+    .carousel {
+        margin: 0em 2.25em 0em 2.25em;
+        position: relative;
+    }
+
+
+    .carouselafsnee {
+        max-width: 100%;
+        overflow: hidden;
+        overflow: auto;
+        height: 20em;
+    }
+
+
+    .content {
+        width: 280em;
+        list-style-type: none;
+        padding: 2em 0 0em 0;
+        position: relative;
+    }
+
+
+    .card {
+        width: 20em;
+        height: 15em;
+        background: #fff;
+        float: left;
+        margin: 0 1em 0 0;
+        cursor: pointer;
+        transform: scale(1);
+        visibility: visible;
+        box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+        transition: all .2s ease-in-out;
+        background: url(../img/vergezochtthumb.svg) no-repeat;
+    }
+
+    .card article {
+        background: url(../img/uitgelichtheader.svg) no-repeat;
+    }
+
+
+    .card h1 {
+        color: white;
+        text-align: center;
+        padding-top: 0.3em;
+    }
+
+
+    .card h2 {
+        color: #ffffff;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 2em;
+        padding: 0.5em 0.5em 0.5em 0.5em;
+    }
+
+    .card:hover {
+        cursor: pointer;
+        transform: scale(1);
+        visibility: visible;
+        transition: all .2s ease-in-out;
+        transform: scale(1.1);
+        z-index: 100;
+        position: relative;
+        transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+        transition-duration: 400ms;
+    }
+
+
+
+    .carouselafsnee {
+        overflow: auto;
+        zoom: 1;
+    }
+
+
+    /* EINDE CAROUSEL UITGELICHTE VERHALEN */
+    /*BEGIN VAN FILTER GEDEELTE*/
+    .filterkop {
+        font-size: 2em;
+    }
+
+    .filter {
+        display: flex;
+        flex-direction: column;
+        padding: 0 2.3em 0 2.3em;
+    }
+
+    .containerzoekbalk {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        display: flex;
+    }
+
+    .zoekbalk {
+        margin-top: 2em;
+        width: 18em;
+        display: inline-block;
+        height: 3.3em;
+        border: 0.15em solid white;
+        font-size: 0.85em;
+        padding-left: 1em;
+        box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+
+    }
+
+    input + button {
+        margin-top: 2.85em;
+        background: url(../img/booksearchicon.svg) no-repeat center;
+        padding: 1em 2.4em 1em 2.4em;
+        margin-left: ;
+        border: none;
+        background-size: 80%;
+        background-color: #ffc917;
+        background-size: 50%;
+        cursor: pointer;
+        box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+        font-size: 0.6em;
+    }
+
+    input + button:hover {
+        background-color: #ffe299;
+    }
+
+
+    input + button:active {
+        background-color: #ffc917;
+    }
+
+
+
+    .filtermenu {
+        margin-top: 0.5em;
+        background-color: white;
+        box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+        height: 9.55em;
+    }
+
+
+    button {
+        background-color: #ffc917;
+        display: inline-block;
+        border: none;
+        font-size: 1.3em;
+        padding: 0.4em 0.6em 0.4em 0.55em;
+        cursor: pointer;
+        color: white;
+    }
+
+
+    /* custom dropdown select menu */
+    .customdropdown {
+        width: 10em;
+        background-position: 8em 0.5em;
+        color: #0079d3;
+        float: left;
+        font-size: 1em;
+        margin: 1em 0em 0em 1.5em;
+    }
+
+    .filtersverwijderen {
+        margin: 0;
+        margin-top: 0.8em;
+    }
+
+    .filterkop {
+        margin-top: 1em;
+    }
+
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .filterknoppen {
+        display: flex;
+        justify-content: center;
+        background-color: #ffc917;
+    }
+
+    /* einde custom dropdown select menu */
+    /*EINDE VAN FILTER GEDEELTE*/
+    /* footer logo */
+    footer img {
+
+        float: right;
+        margin: -2.5em 2.3em 0em 77em;
+    }
+
+    /* footer logo */
+    /* VERHALEN COLLECTIE */
+    /* VERGEZOCHT VERHAAL */
+    body.vergezochtbody {
+        background-color: #30303A;
+
+    }
+
+
+
+
+    main.vergezocht {
+        background-color: #30303A;
+        padding-bottom: 3em;
+    }
+
+    .chartBarsWrap {
+        margin: -1em 2em -5.5em 2em;
+        background-color: ;
+    }
+
+    .chartBars {
+        position: relative;
+        max-width: 600px;
+        height: 300px;
+        margin: 50px auto 100px;
+    }
+
+    .chartBars .bars {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        padding: 0 1%;
+        margin: 0;
+    }
+
+    .chartBars .bars li {
+        display: inline-block;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 24%;
+        flex: 0 1 24%;
+        height: 100%;
+        margin: 0;
+        text-align: center;
+        position: relative;
+        font-size: 16px;
+    }
+
+    .chartBars .bars li .bar {
+        width: 100%;
+        background: #49E;
+        position: absolute;
+        font-size: 1.5em;
+        color: transparent;
+        padding-top: 18px;
+        bottom: 0;
+        height: 0;
+        overflow: hidden;
+        font-weight: bold;
+        outline: 2px solid transparent;
+        -webkit-transition: 1.5s height cubic-bezier(0.6, 0.4, 0.4, 1.1);
+        transition: 4s height cubic-bezier(0.6, 0.4, 0.4, 1.1);
+    }
+
+    .chartBars .bars li .bar:after {
+        content: '';
+        vertical-align: top;
+        color: transparent;
+        margin-right: -8px;
+    }
+
+    .chartBars .bars li b {
+        color: #eee;
+        width: 100%;
+        position: absolute;
+        bottom: -2em;
+        left: 0;
+        text-align: center;
+        border-radius: none;
+    }
+
+    .chartBars .numbers {
+        width: 50px;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        position: absolute;
+        left: -50px;
+    }
+
+    .chartBars .numbers li {
+        text-align: right;
+        padding-right: 1em;
+        list-style: none;
+        height: 59px;
+        position: relative;
+        font-size: 0.5em;
+        bottom: 11px;
+        right: -9px;
+        color: #eee;
+    }
+
+    .chartBars .numbers li:after {
+        content: "\00af";
+        position: relative;
+        right: -5px;
+        font-size: 5px;
+        top: 7px;
+        color: rgba(255, 255, 255, 0.34);
+    }
+
+    .chartBars .numbers li:first-of-type {
+        height: 63px;
+        margin-top: -1px;
+    }
+
+    .chartBars1 .bar {
+        border-top-right-radius: 30px;
+    }
+
+    .chartBars2 {
+        max-width: 700px;
+    }
+
+    .chartBars2 .bars {
+        padding: 0;
+
+    }
+
+    .chartBars2 .bars li {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 25%;
+        flex: 0 1 25%;
+    }
+
+    .chartBars2 .bars li .bar {
+        -webkit-box-shadow: 0 0 20px #222;
+        box-shadow: 0 0 20px #222;
+    }
+
+    .chartBars3 {
+        background: rgba(255, 255, 255, 0.1);
+        border-top: 1px solid #666;
+        border-right: 1px solid #666;
+    }
+
+    .chartBars3 .bars {
+        border-color: #666;
+        padding: 0;
+    }
+
+    .chartBars3 .bars li .bar {
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        font-size: 22px !important;
+    }
+
+    .chartBars3 .bars li .bar:after {
+        font-size: .6em !important;
+    }
+
+    .chartBarsWrap.chartBarsHorizontal {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-left: 70px;
+    }
+
+    .chartBarsWrap.chartBarsHorizontal .bars b {
+        color: #eee;
+        width: 100%;
+        position: absolute;
+        bottom: initial;
+        top: 1em;
+        left: -102%;
+        text-align: right;
+    }
+
+    .chartBarsWrap.chartBarsHorizontal .chartBars {
+        height: 500px;
+    }
+
+    .chartBarsWrap.chartBarsHorizontal .chartBars .bars {
+        border: 0;
+    }
+
+    .chartBarsWrap.chartBarsHorizontal .chartBars .bars .bar {
+        width: 0;
+        padding-top: 10px;
+        height: 100% !important;
+        text-align: right;
+        font-size: 1.5em;
+
+        -webkit-transition: 2s width cubic-bezier(0.6, 0.4, 0.4, 1.1);
+        transition: 2s width cubic-bezier(0.6, 0.4, 0.4, 1.1);
+    }
+
+    .chartBarsWrap.chartBarsHorizontal .chartBars .bars .bar:after {
+        font-size: .6em !important;
+        margin-right: 20px;
+    }
+
+    .bars li .bar.greenBarFlat {
+        background-color: #6B8E23, #6B8E23;
+        background: url(img/kaas.svg);
+        background-position: right;
+    }
+
+    .bars li .bar.blueBarFlat {
+        background-color: #49E;
+    }
+
+    .bars li .bar.orangeBarFlat {
+        background-color: orange;
+    }
+
+    .bars li .bar.purpleBarFlat {
+        background-color: #6e46af;
+    }
+
+
+
+
+
+    /* DE VERSCHILLENDE BARS VAN DE EERSTE GRAFIEK */
+    .bars li .bar.vBar {
+        background: url(../img/v.svg) no-repeat bottom;
+        box-shadow: none;
+        background-size: 92%;
+    }
+
+
+    .bars li .bar.eBar {
+        background: url(../img/e.svg) no-repeat bottom;
+        box-shadow: none;
+        background-size: 92%;
+    }
+
+    .bars li .bar.rBar {
+        background: url(../img/r.svg) no-repeat bottom;
+        box-shadow: none;
+        background-size: 92%;
+    }
+
+    .bars li .bar.gBar {
+        background: url(../img/g.svg) no-repeat bottom;
+        box-shadow: none;
+        background-size: 92%;
+    }
+
+    .bars li .bar.e2Bar {
+        background: url(../img/e2.svg) no-repeat bottom;
+        box-shadow: none;
+        background-size: 92%;
+    }
+
+    .bars li .bar.zBar {
+        background: url(../img/z.svg) no-repeat bottom;
+        box-shadow: none;
+        background-size: 92%;
+    }
+
+    .bars li .bar.oBar {
+        background: url(../img/o.svg) no-repeat bottom;
+        box-shadow: none;
+        background-size: 92%;
+    }
+
+    .bars li .bar.cBar {
+        background: url(../img/c.svg) no-repeat bottom;
+        box-shadow: none;
+        background-size: 92%;
+    }
+
+    .bars li .bar.hBar {
+        background: url(../img/h.svg) no-repeat bottom;
+        box-shadow: none;
+        background-size: 92%;
+    }
+
+    .bars li .bar.tBar {
+        background: url(../img/t.svg) no-repeat bottom;
+        box-shadow: none;
+        background-size: 92%;
+    }
+
+
+    /* DE VERSCHILLENDE BARS VAN DE EERSTE GRAFIEK */
+    /* EERSTE ALINEA */
+    section.wrappereerstealineas {
+        background-color: ;
+        margin-top: -4em;
+    }
+
+
+    article.eerstealineas {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    article.eerste {
+        margin: 0em 2em 0em 2em;
+        font-size: 1em;
+        line-height: 1.27em;
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+        padding-top: 0em;
+        color: white;
+    }
+
+
+
+
+
+    /* EERSTE ALINEA */
+    /* TUSSEN GRAFIEKJES */
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 20.55em;
+        margin: auto;
+        background-color: ;
+        margin-top: 1.5em;
+        margin-bottom: 0.8em;
+    }
+
+
+    .bar {
+        margin-top: 0.2em;
+        background-color: #BF2804;
+        height: 0.3em;
+        margin-bottom: 1em;
+    }
+
+    .fill {
+        height: 100%;
+        width: 0;
+        transition: width 4s;
+    }
+
+    .fill.orange {
+        background-color: #FF3D05;
+    }
+
+
+    /* EINDE TUSSEN GRAFIEKJES */
+    /* RONDE GRAFIEKJES */
+    #pie_0 {
+        color: transparent;
+        background: url(../img/cirkel1.svg) no-repeat;
+    }
+
+    #pie_1 {
+        color: transparent;
+        background: url(../img/cirkel3.svg) no-repeat;
+    }
+
+    #pie_2 {
+        color: transparent;
+        background: url(../img/cirkel2.svg) no-repeat;
+    }
+
+    .box-piesite {
+        text-align: center;
+        font-size: 22px;
+        margin-top: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    .piesite {
+        position: relative;
+        width: 1em;
+        height: 1em;
+        font-size: 10em;
+        cursor: default;
+    }
+
+    .piesite .percent {
+        position: absolute;
+        top: 1.1em;
+        left: .1em;
+        width: 100%;
+        font-size: .3em;
+        text-align: center;
+        z-index: 2;
+    }
+
+    .piesite .percent .symbol {
+        font-size: .5em;
+        vertical-align: top;
+        opacity: .5;
+    }
+
+    .piesite > #slice {
+        position: absolute;
+        width: 1em;
+        height: 1em;
+        clip: rect(0px, 1em, 1em, 0.5em);
+    }
+
+    .piesite > #slice.gt50 {
+        clip: rect(auto, auto, auto, auto);
+    }
+
+    .piesite > #slice > .pie {
+        position: absolute;
+        border: .1em solid #444;
+        width: 1em;
+        height: 1em;
+        clip: rect(0em, 0.5em, 1em, 0em);
+        border-radius: 0.5em;
+    }
+
+    li.design .piesite > #slice > .pie {
+        border-color: #50ad26;
+    }
+
+    li.usability .piesite > #slice > .pie {
+        border-color: #1fa9be;
+    }
+
+    li.creativity .piesite > #slice > .pie {
+        border-color: #fe0c0b;
+    }
+
+    .piesite > #slice > .pie.fill {
+        -webkit-transform: rotate(180deg) !important;
+        transform: rotate(180deg) !important;
+    }
+
+    .piesite.fill > .percent {
+        display: none;
+    }
+
+    .piesite:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: .1em;
+        left: .1em;
+        width: .8em;
+        height: .8em;
+        border-radius: 100%;
+        z-index: 1;
+        color: transparent;
+    }
+
+    .piesite:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 1em;
+        height: 1em;
+        border-radius: .5em;
+        opacity: .5;
+        z-index: 0;
+    }
+
+    .piesite:before {
+        /* background: rgba(255, 255, 255, 0.1); */
+    }
+
+    .box-piesite ul {
+        padding: 0;
+    }
+
+    .box-piesite ul li {
+        display: inline-block;
+        margin: 10px 20px;
+    }
+
+    /* EINDE RONDE GRAFIEKJES */
+    .chartBarsHorizontal .chartBars .bars {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+
+
+    .tooltip > .tooltipContent {
+        display: block;
+        position: absolute;
+        background: none repeat scroll 0 0 #222;
+        color: #F0B015;
+        font-family: 'Helvetica';
+        font-size: 0.8em;
+        font-weight: normal;
+        line-height: 1.5em;
+        padding: 16px 15px;
+        min-width: 200px;
+        max-width: 500px;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translate(-50%, -110%);
+        transform: translate(-50%, -110%);
+        margin-left: 0;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        text-align: center;
+        z-index: 2;
+        text-transform: none;
+        -webkit-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .tooltip:hover > .tooltipContent {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        z-index: 99;
+        -webkit-transform: translate(-50%, -130%);
+        transform: translate(-50%, -130%);
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+    }
+
+    .tooltip .tooltipContent:after {
+        border-color: #222 rgba(0, 0, 0, 0);
+        border-style: solid;
+        border-width: 15px 15px 0;
+        bottom: -15px;
+        content: "";
+        display: block;
+        left: 50%;
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+        position: absolute;
+        width: 0;
+    }
+
+    /* VERGEZOCHT VERHAAL */
+}
+
+/* EINDE BREAKPOINT TABLET */
+
+.afscherming {
+    background-color: red;
+    display: none;
+}
+
+
+.verhalencol {
+    display: grid;
+    grid-gap: 1.3em;
+    grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+    grid-template-rows: repeat(2, 17em);
+    margin: 2.2em 2.3em 0em 2.3em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* EINDE TABLET BRAKEPOINT */
+
+/* MINOR BREAKPOINT VERHALEN COLLECTIE */
+
+@media (min-width: 55.5em) {
+    .afscherming3 {
+        background-color: pink;
+        display: block;
+    }
+
+
+
+
+
+
+
+
+
+}
+
+/* MINOR BREAKPOINT VERHALEN COLLECTIE */
+
+/* MINOR BREAKPOINT VERHALEN COLLECTIE */
+
+@media (min-width: 38.15em) {
+    .afscherming2 {
+        background-color: greenyellow;
+        display: block;
+    }
+
+    header h3 {
+        font-size: 2.3vw;
+        margin: 2.5vw -2vw 0vw 3vw;
+    }
+
+
+}
+
+/* MINOR BREAKPOINT VERHALEN COLLECTIE */
+
+/* MINOR BREAKPOINT VERHALEN COLLECTIE */
+
+@media (min-width: 75.65em) {
+    .afscherming {
+        background-color: red;
+        display: block;
+    }
+
+
+
+
+
+}
+
+/* MINOR BREAKPOINT VERHALEN COLLECTIE */
+
+/* MINOR BREAKPOINT FILTER */
+
+@media (min-width: 40.8em) {
+
+    .filtersverwijderen {
+        margin: 0;
+        margin-top: 3.45em;
+    }
+
+    header h3 {
+        font-size: 1.9vw;
+        margin: 2.5vw -2vw 0vw 2vw;
+        color: #003082;
+    }
+
+    /* EERSTE ALINEA */
+    section.wrappereerstealineas {
+        background-color: ;
+        margin-top: -4em;
+        display: flex;
+        flex-direction: column;
+        justify-content: ;
+    }
+
+
+    article.eerstealineas {
+        display: flex;
+        justify-content: ;
+        flex-direction: row;
+        margin: auto;
+        background-color: ;
+        width: 45em;
+    }
+
+    article.eerste {
+        margin: 0em 0em 0em 0em;
+        font-size: 1em;
+        line-height: 1.27em;
+        font-family: 'Raleway', sans-serif;
+        text-align: left;
+        padding: 2em 0.8em 2em 0.8em;
+        color: white;
+        width: 23em;
+
+    }
+
+
+    .wrapper {
+        display: none;
+    }
+
+
+
+
+
+
+
+
+
+    /* EERSTE ALINEA */
+    /* charlie sheen */
+    section.sheentekst {
+        display: flex;
+        justify-content: center;
+        background-color: ;
+        margin-bottom: 4em;
+    }
+
+    article.sheentekstkolommen {
+        display: flex;
+        flex-direction: row;
+        background-color: ;
+        margin: 0em 1.5em 0em 1.5em;
+    }
+
+
+    p.sheentekstkolom {
+        padding: 1.2em;
+        font-family: 'Oswald', sans-serif;
+        color: white;
+    }
+
+    p.speciaal {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    /* charlie sheen */
+}
+
+/* MINOR BREAKPOINT FILTER */
+
+/* DESKTOP BREAKPOINT */
+
+@media (min-width: 65em) {
+
+
+    header {
+        background: pink;
+    }
+
+
+
+    /* !BEGIN HEADER/NAVIGATIE! */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        background: white;
+        position: relative;
+    }
+
+
+    /* NS LOGO TABLET/DESKTOP */
+    .tabdesk svg {
+        width: 4.5em;
+        margin: 0.8em 0 0.9em 2.5em;
+        display: block;
+    }
+    /* NS LOGO TABLET/DESKTOP */
+    /* BEGIN NAVIGATIE */
+    nav ul {
+        display: flex;
+        list-style: none;
+        background-color: white;
+        margin: 0.8em 2.5em 0.3em 0;
+    }
+
+
+    nav a {
+        padding: 0.6em 1.2em 0.2em 1.2em;
+        display: block;
+        text-decoration: none;
+        border-top: none;
+        color: #003082;
+        position: relative;
+        text-decoration: none;
+    }
+
+    /* DE HUIDIGE PAGINA AANDUIDING */
+    .active {
+        color: #ffc917;
+    }
+    /* DE HUIDIGE PAGINA AANDUIDING */
+    /* POINTER ACTIVATIE */
+    a:hover,
+    a:active,
+    a:focus,
+    a:visited {
+        cursor: pointer;
+        text-decoration: none;
+    }
+    /* POINTER ACTIVATIE */
+    /* DE GEKLEURDE TEKST DIE INSCHUIFT */
+    nav a:before {
+        content: attr(data-hover);
+        position: absolute;
+        margin: 0 1.2em 0 0;
+        padding: 0 0 0 1.2em;
+        color: #ffc917;
+        transition: all .7s ease;
+        max-width: 0;
+        overflow: hidden;
+        left: 0;
+        right: 0;
+    }
+    /* DE GEKLEURDE TEKST DIE INSCHUIFT*/
+    /* DE TRIGGER VAN HET HOVER EFFECT*/
+    nav a:hover:before {
+        max-width: 100%;
+    }
+    /* DE TRIGGER VAN HET HOVER EFFECT*/
+    /* EINDE NAVIGATIE */
+    /* !EINDE HEADER/NAVIGATIE! */
+    /* ONDERDELEN SMARTPHONE HEADER */
+    .menuuitklap {
+        display: none;
+    }
+
+    .transvlak {
+        display: none;
+    }
+
+    .menuinklap {
+        display: none;
+        position: relative;
+        margin: 1.45em 0 0 21.45em;
+    }
+
+    a svg {
+        width: 4em;
+        margin: 1.218em 0 2em 2em;
+        display: none;
+    }
+    /* ONDERDELEN SMARTPHONE HEADER */
+    /* BEGIN CAROUSEL */
+    ::-webkit-scrollbar {
+        background-color: #f4f4f4;
+        width: 0.4em;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: url(../img/scrollbar.svg) no-repeat;
+    }
+
+    ::-webkit-scrollbar:horizontal {
+        background-color: #e6e6e9;
+        border-bottom: 3px solid blue;
+        height: 1.7em;
+    }
+
+    ::-webkit-scrollbar-track:horizontal {
+        background: url(../img/achtergrondnstrein.svg) no-repeat right;
+        border-bottom: 0.35em solid #003082;
+    }
+
+    ::-webkit-scrollbar-thumb:horizontal {
+        background: url(../img/nstrein.svg) no-repeat;
+
+    }
+
+    .carousel {
+        margin: 0em 3.7em -2.5em 3.7em;
+        position: relative;
+    }
+
+
+    .carouselafsnee {
+        max-width: 100%;
+        overflow: hidden;
+        overflow: auto;
+        height: 20em;
+    }
+
+
+    .content {
+        width: 150em;
+        list-style-type: none;
+        padding: 2em 0 0em 0;
+        position: relative;
+    }
+
+
+    li.card {
+        width: 20em;
+        height: 15em;
+        float: left;
+        margin: 0 1em 0 0;
+        cursor: pointer;
+        transform: scale(1);
+        visibility: visible;
+        box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+        transition: all .2s ease-in-out;
+        background: url(../img/vergezochtthumb.svg) no-repeat;
+        background-color: white;
+    }
+
+
+    div.carousel li.card article {
+        background: url(../img/uitgelichtheader.svg) no-repeat;
+    }
+
+
+    .card h1 {
+        color: white;
+        text-align: center;
+        padding-top: 0.3em;
+    }
+
+
+    .card h2 {
+        color: #ffffff;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 2em;
+        padding: 0.5em 0.5em 0.5em 0.5em;
+    }
+
+
+
+    .card:hover {
+        cursor: pointer;
+        transform: scale(1);
+        visibility: visible;
+        transition: all .2s ease-in-out;
+        transform: scale(1.1);
+        z-index: 100;
+        position: relative;
+        transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+        transition-duration: 400ms;
+    }
+
+
+
+    .carouselafsnee {
+        overflow: auto;
+        zoom: 1;
+    }
+
+    /* EINDE CAROUSEL */
+    /*BEGIN VAN FILTER GEDEELTE*/
+    h2 {
+        font-size: 1.5em;
+    }
+
+
+
+    .filterkop {
+        float: left;
+        font-size: 3em;
+    }
+
+
+
+
+
+
+    /*SEARCHBAR */
+    .searchbarcontainer {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .knopmetbalk {
+        display: flex;
+        justify-content: flex-end;
+        height: 2.5em;
+        margin-top: 3.5em;
+        padding: 0em;
+    }
+
+    .search-input {
+        outline: none;
+        width: 15em;
+        display: inline-block;
+        border: 0.15em solid white;
+        font-size: 0.85em;
+        padding-left: 1em;
+        box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+        visibility: hidden;
+        transform: scaleX(0);
+        transform-origin: 100%;
+        transition-timing-function: ease-in;
+        transition: transform 0.4s, visibility 0.4s;
+
+    }
+
+    .search-button {
+        cursor: pointer;
+        outline: none;
+        transition: 0.3s linear;
+        background-color: #12947d;
+        background: url(../img/booksearchicon.svg) no-repeat center;
+        margin: 0;
+        border: none;
+        background-color: #ffc917;
+        background-size: 50%;
+        cursor: pointer;
+        box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+        font-size: 0.6em;
+    }
+
+    /*SEARCHBAR */
+    .filter {
+        display: flex;
+        flex-direction: column;
+        padding: 0 3.7em 0 3.7em;
+        margin-top: 3.5em;
+    }
+
+    .containerzoekbalk {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        display: flex;
+    }
+
+    .zoekbalk {
+        margin-top: 2em;
+        width: 18em;
+        display: inline-block;
+        height: 3.3em;
+        border: 0.15em solid white;
+        font-size: 0.85em;
+        padding-left: 1em;
+        box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+
+    }
+
+    input + button {
+        margin-top: 2.85em;
+        background: url(../img/booksearchicon.svg) no-repeat center;
+        padding: 1em 2.4em 1em 2.4em;
+        margin-left: ;
+        border: none;
+        background-size: 80%;
+        background-color: #ffc917;
+        background-size: 50%;
+        cursor: pointer;
+        box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+        font-size: 0.6em;
+    }
+
+    input + button:hover {
+        background-color: #ffe299;
+    }
+
+
+    input + button:active {
+        background-color: #ffc917;
+    }
+
+
+
+    .filtermenu {
+        margin-top: 0.5em;
+        background-color: white;
+        box-shadow: 0 0.2rem 0 0 rgba(7, 7, 33, .15);
+        height: 9.55em;
+    }
+
+
+
+
+    button {
+        background-color: #ffc917;
+        display: inline-block;
+        border: none;
+        font-size: 1.3em;
+        padding: 0.4em 0.6em 0.4em 0.55em;
+        cursor: pointer;
+        color: white;
+    }
+
+
+
+
+
+    /* custom dropdown select menu */
+    .customdropdown {
+        width: 10em;
+        background-position: 8em 0.5em;
+        color: #0079d3;
+        float: left;
+        font-size: 1em;
+        margin: 1em 0em 0em 1.5em;
+
+
+    }
+
+    .filtersverwijderen {
+        float: right;
+        margin: 0;
+        margin-top: 3.44em;
+
+    }
+
+    .filterkop {
+        margin-top: 1em;
+    }
+
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .filterknoppen {
+        display: flex;
+        justify-content: center;
+        background-color: #ffc917;
+    }
+
+
+    /* verhalen collectie */
+    .verhalenwrap {
+        margin: 2.2em 1.45em 0em 1.45em;
+    }
+
+    header h3 {
+        font-size: 1.3vw;
+        margin: 1.6vw -2vw 0vw 1.5vw;
+        color: #003082;
+    }
+    /* verhalen collectie */
+    /* einde custom dropdown select menu */
+    /*EINDE VAN FILTER GEDEELTE*/
+    /* FOOTER SOCIALS*/
+    .footer-social-icons {
+        width: 12em;
+        display: block;
+        margin-left: 3.7em;
+        padding-top: 1.5em;
+
+    }
+    /* FOOTER SOCIALS*/
+    /* LOGO IN FOOTER */
+    footer img {
+
+        float: right;
+        margin: -2.5em 3.75em 0em 77em;
+    }
+
+    /* charlie sheen */
+    section.sheentekst {
+        display: flex;
+        justify-content: center;
+        background-color: ;
+        margin-bottom: 4em;
+    }
+
+    article.sheentekstkolommen {
+        display: flex;
+        flex-direction: row;
+        background-color: ;
+        margin: 0em 5em 0em 5em;
+    }
+
+
+    p.sheentekstkolom {
+        padding: 1.2em;
+        font-family: 'Oswald', sans-serif;
+        color: white;
+    }
+
+    p.speciaal {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    /* charlie sheen */
+    /* LOGO IN FOOTER */
+}
+
+/* EINDE DESKTOP BREAKPOINT */
+
+/* MINOR BREAKPOINT SCROLLBAR */
+
+/* EINDE MINOR BREAKPOINT SCROLLBAR */
+
+/* MINOR BREAKPOINT VOOR SCROLLBAR */
